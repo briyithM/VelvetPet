@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi cuenta · VelvetPet</title>
+<meta name="description" content="Crea tu cuenta o accede a tu historial clínico en VelvetPet.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="brand-mark">V</span> VelvetPet</a>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="citas.html">Agendar cita</a>
+      <a href="seguros.html">Seguros</a>
+      <a href="cuenta.html" class="nav-cta active" data-nav-account>Ingresar</a>
+    </div>
+  </nav>
+</header>
+
+<section class="container" id="auth-view">
+  <h1 id="auth-title">Crea tu cuenta cliente</h1>
+  <p style="max-width:680px;color:var(--color-muted)" id="auth-sub">Solo solicitamos los datos mínimos necesarios para prestar el servicio veterinario. Tus datos están protegidos según la Ley Orgánica de Protección de Datos Personales del Ecuador (LOPDP).</p>
+
+  <div class="grid grid-2" style="margin-top:1.5rem;align-items:start">
+    <form class="form" id="register-form">
+      <h3>Registro</h3>
+      <div class="row">
+        <label>Nombre <input id="r-name" required maxlength="60"></label>
+        <label>Apellido <input id="r-last" required maxlength="60"></label>
+      </div>
+      <label>Correo electrónico <input type="email" id="r-email" required></label>
+      <div class="row">
+        <label>Teléfono <input type="tel" id="r-phone" required pattern="[0-9]{7,10}"></label>
+        <label>Contraseña <input type="password" id="r-pass" required minlength="6"></label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="r-terms" required>
+        <label for="r-terms">He leído las <a href="docs/POLÍTICA DE PRIVACIDAD .pdf" target="_blank">Políticas de la empresa</a> y acepto los <a href="docs/terminos-condiciones.pdf" target="_blank">Términos y Condiciones</a> y autorizo el tratamiento de mis datos para reservas, citas y contratación de seguros.</label>
+      </div>
+      <button class="btn btn-primary" type="submit">Crear cuenta</button>
+      <p id="register-message" style="font-size:.9rem;color:#a33;margin-top:.9rem;display:none"></p>
+      <p style="margin-top:1rem;font-size:.95rem;color:var(--color-muted)">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>.</p>
+      <p style="font-size:.85rem;color:var(--color-muted)">Si no aceptas los términos, no podemos continuar con el proceso. Puedes <a href="index.html">volver al inicio</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="container" id="dash-view" style="display:none">
+  <h1>Mi cuenta</h1>
+  <div class="dash-grid" style="margin-top:1rem">
+    <aside class="dash-side">
+      <h3 id="dash-name"></h3>
+      <p class="user-email" id="dash-email"></p>
+  
+      <hr style="border:0;border-top:1px solid var(--color-line);margin:1rem 0">
+      <button class="btn btn-ghost" id="logout-btn" style="width:100%;margin-bottom:.5rem">Cerrar sesión</button>
+
+    </aside>
+
+    <div>
+      <div class="card" style="margin-bottom:1rem">
+        <h3>Citas agendadas</h3>
+        <div id="appt-list"></div>
+      </div>
+      <div class="card" style="margin-bottom:1rem">
+        <h3>Reservas de productos</h3>
+        <div id="res-list"></div>
+      </div>
+      <div class="card" style="margin-bottom:1rem">
+        <h3>Seguros activos</h3>
+        <div id="ins-list"></div>
+      </div>
+      <div class="card">
+        <h3>Historial clínico por mascota</h3>
+        <p style="color:var(--color-muted);font-size:.95rem;margin-bottom:1rem">Filtra y revisa el historial clínico de tus mascotas basado en las citas y registros guardados.</p>
+        <div class="form" style="margin-bottom:1rem">
+          <div class="row">
+            <label>Mascota
+              <select id="history-pet"></select>
+            </label>
+            <label>Filtro
+              <select id="history-filter">
+                <option value="all">Todo</option>
+                <option value="vacunas">Vacunas</option>
+                <option value="diagnosticos">Diagnósticos</option>
+                <option value="solicitudes">Solicitudes</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div id="hist-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><h4>Nosotros</h4><p style="color:var(--color-sky);font-size:.9rem">Clínica veterinaria en Cumbayá, Quito.</p></div>
+    <div><h4></h4><ul>
+      <li><a href="docs/POLÍTICA DE PRIVACIDAD .pdf" target="_blank">Política de privacidad</a></li>
+    </ul></div>
+    <div><h4></h4><ul>
+      <li>Acceso, Rectificación, Cancelación y Oposición</li>
+      <li><a href="mailto:privacidad@velvet.ec">privacidad@velvet.ec</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 VelvetPet · Créditos: Montenegro S, Gavilanez M, Mera S.</div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/cuenta.js"></script>
+</body>
+</html>

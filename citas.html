@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agendar cita · VelvetPet</title>
+<meta name="description" content="Agenda una cita veterinaria con disponibilidad sincronizada con nuestro equipo.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="brand-mark">V</span> VelvetPet</a>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="citas.html" class="active">Agendar cita</a>
+      <a href="seguros.html">Seguros</a>
+      <a href="cuenta.html" class="nav-cta" data-nav-account>Ingresar</a>
+    </div>
+  </nav>
+</header>
+
+<section class="container">
+  <h1>Agendar una cita</h1>
+  <p style="max-width:680px;color:var(--color-muted)">Selecciona el veterinario, el día y la hora. El calendario se sincroniza con la disponibilidad del equipo y marca los días no disponibles.</p>
+
+  <div class="grid grid-2" style="margin-top:1.5rem;align-items:start">
+    <div class="calendar">
+      <div class="cal-head">
+        <button id="cal-prev" type="button">‹</button>
+        <strong id="cal-title"></strong>
+        <button id="cal-next" type="button">›</button>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+      <p style="margin-top:.8rem;font-size:.82rem;color:var(--color-muted)">
+        <span style="display:inline-block;width:10px;height:10px;background:#f4ece1;border:1px solid #ddd;vertical-align:middle"></span>
+        Día no disponible
+      </p>
+    </div>
+
+    <form class="form" id="appt-form">
+      <label>Veterinario
+        <select id="vet" required>
+          <option value="">Selecciona...</option>
+          <option value="Dra. Andrea Salazar">Dra. Andrea Salazar (medicina general)</option>
+          <option value="Dr. Felipe Cárdenas">Dr. Felipe Cárdenas (cirugía)</option>
+          <option value="Dra. Lucía Mera">Dra. Lucía Mera (dermatología y spa)</option>
+        </select>
+      </label>
+      <label>Mascota
+        <input type="text" id="pet" placeholder="Nombre de tu mascota" required>
+      </label>
+      <div class="row">
+        <label>Raza
+          <input type="text" id="breed" placeholder="Ej. Labrador" required>
+        </label>
+        <label>Sexo
+          <select id="sex" required>
+            <option value="">Selecciona...</option>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Especie
+          <select id="species" required>
+            <option>Perro</option><option>Gato</option><option>Hámster</option>
+          </select>
+        </label>
+        <label>Hora
+          <select id="time" required>
+            <option value="">Selecciona...</option>
+            <option>08:00</option><option>09:00</option><option>10:00</option>
+            <option>11:00</option><option>14:00</option><option>15:00</option>
+            <option>16:00</option><option>17:00</option>
+          </select>
+        </label>
+      </div>
+      <label>Motivo de la consulta
+        <textarea id="reason" rows="3" placeholder="Síntomas, control, vacunación, etc."></textarea>
+      </label>
+      <p id="selected-date" class="notice info" style="display:none"></p>
+      <button class="btn btn-primary" type="submit">Confirmar cita</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><h4>Nosotros</h4><p style="color:var(--color-sky);font-size:.9rem">Clínica veterinaria en Cumbayá, Quito.</p></div>
+    <div><h4></h4><ul>
+      <li><a href="docs/POLÍTICA DE PRIVACIDAD .pdf" target="_blank">Política de privacidad</a></li>
+    </ul></div>
+    <div><h4></h4><ul>
+      <li>Acceso, Rectificación, Cancelación y Oposición</li>
+      <li><a href="mailto:privacidad@velvet.ec">privacidad@velvet.ec</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 VelvetPet · Créditos: Montenegro S, Gavilanez M, Mera S.</div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/citas.js"></script>
+</body>
+</html>
