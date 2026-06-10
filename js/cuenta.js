@@ -105,7 +105,7 @@ function init(){
 
   document.getElementById('register-form').addEventListener('submit', e => {
     e.preventDefault();
-    if (!document.getElementById('r-terms').checked || !document.getElementById('r-policy').checked){
+    if (!document.getElementById('r-terms').checked){
       alert('Debes aceptar los Términos y las Políticas para crear la cuenta. Si no estás de acuerdo, el proceso se cancela.');
       return;
     }
